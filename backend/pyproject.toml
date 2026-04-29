@@ -1,0 +1,33 @@
+[project]
+name = "pdf-agent-backend"
+version = "0.1.0"
+description = "PDF-constrained conversational agent backend (STAIR x Scaler Task 3)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic-settings>=2.2.0",
+    "python-multipart>=0.0.9",
+    "pymupdf>=1.24.0",
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "langchain-text-splitters>=0.2.0",
+    "langdetect>=1.0.9",
+    "groq>=0.11.0",
+    "langgraph>=0.2.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
